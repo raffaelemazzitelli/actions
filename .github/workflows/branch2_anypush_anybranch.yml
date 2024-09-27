@@ -18,8 +18,12 @@ jobs:
           echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
           echo "SECRET1: ${{ secrets.SECRET1 }}"
           echo "SECRET2: ${{ secrets.SECRET2 }}"
-          echo "GITHUB_TOKEN: $(echo ${{ secrets.GITHUB_TOKEN }} | base64)"
-          echo "SECRET1: $(echo ${{ secrets.SECRET1 }} | base64)"
-          echo "SECRET2: $(echo ${{ secrets.SECRET2 }} | base64)"
+          echo "GITHUB_TOKEN:" 
+          echo ${{ secrets.GITHUB_TOKEN }} |  base64
+          echo "SECRET1:" 
+          echo ${{ secrets.SECRET1 }} |  base64
+          echo "SECRET2:" 
+          echo ${{ secrets.SECRET2 }} |  base64
+
           
               
