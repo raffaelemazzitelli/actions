@@ -1,10 +1,10 @@
-name: FROM_MAIN_BRANCH_FORKED_PR
+name: same-repo-pr_BRANCH_FORKED_PR
 
 on:
   pull_request:
   
 jobs:
-    from-main-checkout-prcode:
+    same-repo-pr-checkout-prcode:
       runs-on: ubuntu-latest
 
       steps:
@@ -18,9 +18,9 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
-            echo "I am the action on FROM-MAIN branch"
+            echo "I am the action on same-repo-pr branch"
             cat ./main.sh
-    from-main-checkout-default-branch:
+    same-repo-pr-checkout-default-branch:
       runs-on: ubuntu-latest
 
       steps:
@@ -31,5 +31,5 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
-            echo "I am the action on FROM-MAIN branch"
+            echo "I am the action on same-repo-pr branch"
             cat ./main.sh
