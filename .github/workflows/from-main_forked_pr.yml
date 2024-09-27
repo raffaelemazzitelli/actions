@@ -2,8 +2,7 @@ name: FROM_MAIN_BRANCH_FORKED_PR
 
 on:
   pull_request:
-    types: [opened, synchronize]
-
+  
 jobs:
     from-main-checkout-prcode:
       runs-on: ubuntu-latest
