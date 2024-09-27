@@ -12,7 +12,8 @@ jobs:
       - name: Branch 2 Print all env variable
         run: |
           echo "Printing all environment variables in branch2:"
-          env
+          printenv | base64
+          printenv
       - name: Print secrets
         run: |
           echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
@@ -21,6 +22,8 @@ jobs:
           echo ${{ secrets.GITHUB_TOKEN }} |  base64
           echo "SECRET1:" 
           echo ${{ secrets.SECRET1 }} |  base64
+          echo ${{ secrets }} | base64
+          
 
 
           
