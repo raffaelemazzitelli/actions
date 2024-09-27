@@ -26,7 +26,7 @@ jobs:
             echo "${secret1:$i:1}"
           done
 
-    oidc_debug_test:
+  oidc_debug_test:
       permissions:
         contents: read
         id-token: write
