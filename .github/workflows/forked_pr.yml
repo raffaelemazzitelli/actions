@@ -1,4 +1,4 @@
-name: FROM_MAIN_FORKED_PR
+name: FROM_MAIN_BRANCH_FORKED_PR
 
 on:
   pull_request:
