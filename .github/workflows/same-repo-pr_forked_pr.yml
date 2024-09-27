@@ -2,6 +2,7 @@ name: same-repo-pr_BRANCH_FORKED_PR
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, closed]
   
 jobs:
     same-repo-pr-checkout-prcode:
