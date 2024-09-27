@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-   from-main-checkout-prcode:
+    from-main-checkout-prcode:
       runs-on: ubuntu-latest
 
       steps:
