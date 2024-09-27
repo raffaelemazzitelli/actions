@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-    from-main-checkout-prcode:
+    main-checkout-prcode:
       runs-on: ubuntu-latest
 
       steps:
@@ -19,8 +19,9 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
+            echo "I am the action on MAIN branch"
             cat ./main.sh
-    from-main-checkout-default-branch:
+    main-checkout-default-branch:
       runs-on: ubuntu-latest
 
       steps:
@@ -31,4 +32,5 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
+            echo "I am the action on MAIN branch"
             cat ./main.sh
