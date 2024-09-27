@@ -1,4 +1,4 @@
-name: MAIN_PULL_REQUEST
+name: FORKEDPR_PULL_REQUEST
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-    main-checkout-prcode:
+    forkedpr-checkout-prcode:
       runs-on: ubuntu-latest
 
       steps:
@@ -20,9 +20,9 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
-            echo "I am the action on MAIN branch"
+            echo "I am the action on FORKEDPR branch"
             cat ./main.sh
-    main-checkout-default-branch:
+    forkedpr-checkout-default-branch:
       runs-on: ubuntu-latest
 
       steps:
@@ -33,5 +33,5 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
-            echo "I am the action on MAIN branch"
+            echo "I am the action on FORKEDPR branch"
             cat ./main.sh
