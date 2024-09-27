@@ -1,1 +1,1 @@
-I am the pr-to-merge
+I am main.sh in the pr-to-merge

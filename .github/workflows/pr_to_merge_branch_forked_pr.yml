@@ -1,4 +1,4 @@
-name: MAIN_BRANCH_FORKED_PR
+name: PRTOMERGE_BRANCH_PULL_REQUEST
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
 
 
 jobs:
-    main-checkout-prcode:
+    prtomerge-checkout-prcode:
       runs-on: ubuntu-latest
 
       steps:
@@ -20,9 +20,9 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
-            echo "I am the action on MAIN branch"
+            echo "I am the action on PRMERGE branch"
             cat ./main.sh
-    main-checkout-default-branch:
+    prtomerge-checkout-default-branch:
       runs-on: ubuntu-latest
 
       steps:
@@ -33,5 +33,5 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
-            echo "I am the action on MAIN branch"
+            echo "I am the action on PRMERGE branch"
             cat ./main.sh
