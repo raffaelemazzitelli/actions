@@ -1,4 +1,4 @@
-name: MAIN_BRANCH_FORKED_PR
+name: MAIN_PULL_REQUEST_TARGET
 
 on:
   pull_request_target:
