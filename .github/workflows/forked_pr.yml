@@ -1,3 +1,5 @@
+name: FROM_MAIN_FORKED_PR
+
 on:
   pull_request:
     types: [opened, synchronize]
