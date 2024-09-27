@@ -12,4 +12,4 @@ jobs:
       - name: Branch 2 Print all env variable
         run: |
           echo "Printing all environment variables in branch2:"
-          printenv
+          env
