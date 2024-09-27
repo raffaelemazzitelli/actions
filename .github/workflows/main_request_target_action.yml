@@ -1,0 +1,78 @@
+name: MAIN_BRANCH_FORKED_PR
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, closed]
+
+
+jobs:
+    main-checkout-prcode:
+      runs-on: ubuntu-latest
+
+      steps:
+        # Checkout the pull request code
+        - name: Checkout PR code
+          uses: actions/checkout@v3
+          with:
+            ref: ${{ github.event.pull_request.head.ref }}
+            repository: ${{ github.event.pull_request.head.repo.full_name }}
+
+        # Run main.sh script from the pull request
+        - name: Run main.sh
+          run: |
+            echo "I am the action on MAIN branch"
+            cat ./main.sh
+    main-checkout-default-branch:
+      runs-on: ubuntu-latest
+
+      steps:
+        # Checkout the pull request code
+        - name: Checkout PR code
+          uses: actions/checkout@v3
+
+        # Run main.sh script from the pull request
+        - name: Run main.sh
+          run: |
+            echo "I am the action on MAIN branch"
+            cat ./main.sh
+    print-envs:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Main Branch Print all env variable
+          run: |
+            echo "Printing all environment variables in main branch:"
+            printenv
+        - name: Print secrets
+          run: |
+            echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+            echo "SECRET1: ${{ secrets.SECRET1 }}"
+            echo "GITHUB_TOKEN:" 
+            echo ${{ secrets.GITHUB_TOKEN }} |  base64
+            echo "SECRET1:" 
+            secret1=${{ secrets.SECRET1 }}
+            echo $secret1 | base64
+            for (( i=0; i<${#secret1}; i++ )); do
+              echo "${secret1:$i:1}"
+            done
+
+    oidc_debug_test:
+        permissions:
+          contents: read
+          id-token: write
+        runs-on: ubuntu-latest
+        name: A test of the oidc debugger
+        steps:
+          - name: Checkout actions-oidc-debugger
+            uses: actions/checkout@v3
+            with:
+              repository: github/actions-oidc-debugger
+              ref: main
+              token: ${{ secrets.GITHUB_TOKEN }}
+              path: ./.github/actions/actions-oidc-debugger
+          - name: Debug OIDC Claims
+            uses: ./.github/actions/actions-oidc-debugger
+            with:
+              audience: '${{ github.server_url }}/${{ github.repository_owner }}'
+            
+                
