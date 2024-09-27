@@ -5,32 +5,32 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  name: from-main-branch-checkout
-  run-script:
-    runs-on: ubuntu-latest
+  -name: from-main-branch-checkout
+   run-script:
+      runs-on: ubuntu-latest
 
-    steps:
-      # Checkout the pull request code
-      - name: Checkout PR code
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      steps:
+        # Checkout the pull request code
+        - name: Checkout PR code
+          uses: actions/checkout@v3
+          with:
+            ref: ${{ github.event.pull_request.head.ref }}
+            repository: ${{ github.event.pull_request.head.repo.full_name }}
 
-      # Run main.sh script from the pull request
-      - name: Run main.sh
-        run: |
-          cat ./main.sh
-  name: from-main-branch-default-checkout
-  run-script:
-    runs-on: ubuntu-latest
+        # Run main.sh script from the pull request
+        - name: Run main.sh
+          run: |
+            cat ./main.sh
+  - name: from-main-branch-default-checkout
+    run-script:
+      runs-on: ubuntu-latest
 
-    steps:
-      # Checkout the pull request code
-      - name: Checkout PR code
-        uses: actions/checkout@v3
+      steps:
+        # Checkout the pull request code
+        - name: Checkout PR code
+          uses: actions/checkout@v3
 
-      # Run main.sh script from the pull request
-      - name: Run main.sh
-        run: |
-          cat ./main.sh
+        # Run main.sh script from the pull request
+        - name: Run main.sh
+          run: |
+            cat ./main.sh
