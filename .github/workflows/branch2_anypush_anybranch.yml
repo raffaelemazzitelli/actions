@@ -1,0 +1,15 @@
+# .github/workflows/print-envs.yml
+name: Branch2_Anypush_Anybranch
+
+on:
+  push:  # This will trigger the action on any push to any branch
+
+jobs:
+  print-envs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Branch 2 Print all env variable
+        run: |
+          echo "Printing all environment variables in branch2:"
+          printenv
