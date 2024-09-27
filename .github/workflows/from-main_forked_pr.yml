@@ -5,8 +5,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  -name: from-main-branch-checkout
-   run-script:
+   from-main-checkout-prcode:
       runs-on: ubuntu-latest
 
       steps:
@@ -21,8 +20,7 @@ jobs:
         - name: Run main.sh
           run: |
             cat ./main.sh
-  - name: from-main-branch-default-checkout
-    run-script:
+    from-main-checkout-default-branch:
       runs-on: ubuntu-latest
 
       steps:
