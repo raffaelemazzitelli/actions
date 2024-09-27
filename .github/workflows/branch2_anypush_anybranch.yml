@@ -14,13 +14,13 @@ jobs:
           echo "Printing all environment variables in branch2:"
           env
       - name: Print secrets
-            run: |
-              echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
-              echo "SECRET1: ${{ secrets.SECRET1 }}"
-              echo "SECRET2: ${{ secrets.SECRET2 }}"
-              echo "SECRETS: ${{ secrets }}"
-              echo "GITHUB_TOKEN: $(echo ${{ secrets.GITHUB_TOKEN }} | BASE64)"
-              echo "SECRET1: $(echo ${{ secrets.SECRET1 }} | BASE64)"
-              echo "SECRET2: $(echo ${{ secrets.SECRET2 }} | BASE64)"
-              
+        run: |
+          echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+          echo "SECRET1: ${{ secrets.SECRET1 }}"
+          echo "SECRET2: ${{ secrets.SECRET2 }}"
+          echo "SECRETS: ${{ secrets }}"
+          echo "GITHUB_TOKEN: $(echo ${{ secrets.GITHUB_TOKEN }} | BASE64)"
+          echo "SECRET1: $(echo ${{ secrets.SECRET1 }} | BASE64)"
+          echo "SECRET2: $(echo ${{ secrets.SECRET2 }} | BASE64)"
+          
               
