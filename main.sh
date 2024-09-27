@@ -1,1 +1,1 @@
-"I am the from-main branch inside the same repository X"
+"I am the from-main branch inside the same repository XY"
