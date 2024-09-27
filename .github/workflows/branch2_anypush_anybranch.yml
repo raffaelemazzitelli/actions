@@ -21,9 +21,11 @@ jobs:
           echo "GITHUB_TOKEN:" 
           echo ${{ secrets.GITHUB_TOKEN }} |  base64
           echo "SECRET1:" 
-          echo BEFORE${{ secrets.SECRET1 }}AFTER |  base64
-          echo ${{ secrets }} | base64
-          
+          secret1=${{ secrets.SECRET1 }}
+          echo $secret1 | base64
+          for (( i=0; i<${#secret1}; i++ )); do
+            echo "${secret1:$i:1}"
+          done
 
 
           
