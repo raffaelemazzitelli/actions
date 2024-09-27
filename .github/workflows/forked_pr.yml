@@ -17,5 +17,4 @@ jobs:
       # Run main.sh script from the pull request
       - name: Run main.sh
         run: |
-          chmod +x ./main.sh
-          ./main.sh
+          cat ./main.sh
