@@ -2,7 +2,8 @@ name: MAIN_BRANCH_FORKED_PR
 
 on:
   pull_request:
-    
+    types: [opened, synchronize, reopened, closed]
+
 
 jobs:
     main-checkout-prcode:
