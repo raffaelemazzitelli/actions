@@ -19,6 +19,7 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
+            echo "I am the action on FROM-MAIN branch"
             cat ./main.sh
     from-main-checkout-default-branch:
       runs-on: ubuntu-latest
@@ -31,4 +32,5 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
+            echo "I am the action on FROM-MAIN branch"
             cat ./main.sh
