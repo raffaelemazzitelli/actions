@@ -1,5 +1,5 @@
 # .github/workflows/print-envs.yml
-name: MainBranch_Anypush_Anybranch
+name: FROM_MAIN_Anypush
 
 on:
   push:  # This will trigger the action on any push to any branch
