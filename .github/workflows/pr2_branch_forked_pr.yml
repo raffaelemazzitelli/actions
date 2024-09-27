@@ -1,4 +1,4 @@
-name: MAIN_BRANCH_FORKED_PR
+name: PR2_FORKED_PR
 
 on:
   pull_request:
@@ -20,7 +20,7 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
-            echo "I am the action on MAIN branch"
+            echo "I am the action on PR2 branch"
             cat ./main.sh
     main-checkout-default-branch:
       runs-on: ubuntu-latest
@@ -33,5 +33,5 @@ jobs:
         # Run main.sh script from the pull request
         - name: Run main.sh
           run: |
-            echo "I am the action on MAIN branch"
+            echo "I am the action on PR2 branch"
             cat ./main.sh
