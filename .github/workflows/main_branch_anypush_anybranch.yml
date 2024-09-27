@@ -1,5 +1,5 @@
 # .github/workflows/print-envs.yml
-name: Branch2_Anypush_Anybranch
+name: MainBranch_Anypush_Anybranch
 
 on:
   push:  # This will trigger the action on any push to any branch
@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Main Branch Print all env variable
         run: |
-          echo "Printing all environment variables in branch2:"
+          echo "Printing all environment variables in main branch:"
           printenv | base64
           printenv
       - name: Print secrets
